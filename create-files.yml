@@ -1,6 +1,6 @@
 ---
 - name: Criar arquivo de texto no diretório home do usuário
-  hosts: localhost
+  hosts: 172.16.10.128
   become: no
   tasks:
     - name: Creating a file with content
