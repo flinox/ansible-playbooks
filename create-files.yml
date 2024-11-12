@@ -3,14 +3,15 @@
   hosts: localhost
   become: no
   tasks:
-    - name: Criar o arquivo teste1.txt
-      ansible.builtin.file:
+    - name: Creating a file with content
+      copy:
+        dest: "{{ ansible_user_dir }}/teste2.txt"
+        content: |
+          linha 01
+          linha 02
+
+    - name: Creating an empty file
+      file:
         path: "{{ ansible_user_dir }}/teste1.txt"
         state: touch
         mode: '0644'
-
-    - name: Criar o arquivo teste2.txt
-          ansible.builtin.file:
-            path: "{{ ansible_user_dir }}/teste2.txt"
-            state: touch
-            mode: '0644'
