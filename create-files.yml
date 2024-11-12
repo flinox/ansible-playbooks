@@ -5,13 +5,13 @@
   tasks:
     - name: Creating a file with content
       copy:
-        dest: "{{ ansible_user_dir }}/teste2.txt"
+        dest: "/home/tester/teste2.txt"
         content: |
           linha 01
           linha 02
 
     - name: Creating an empty file
       file:
-        path: "{{ ansible_user_dir }}/teste1.txt"
+        path: "/home/tester/teste1.txt"
         state: touch
         mode: '0644'
